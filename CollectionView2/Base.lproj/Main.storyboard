@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CollectionVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="collectionVC" customModule="CollectionView2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imG-2s-k5T">
+                                <rect key="frame" x="294" y="68" width="100" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="XXi-XS-VxC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Delete">
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnDeleteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Pa-vg-mHw"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-Od-rLz">
+                                <rect key="frame" x="0.0" y="122.5" width="414" height="739.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="QfQ-a5-jJb">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cvCell1" reuseIdentifier="cvCell1" id="sTI-Qy-Qd6" customClass="cvCell1" customModule="CollectionView2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hIi-Ye-sKk">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-pN-t5s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUU-Xe-iuc">
+                                                    <rect key="frame" x="98" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="P2D-c3-Ie1"/>
+                                                        <constraint firstAttribute="width" constant="30" id="kc1-Qi-yd6"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system" title="">
+                                                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1Ft-pN-t5s" secondAttribute="bottom" id="Zz3-FB-uP0"/>
+                                                <constraint firstItem="aUU-Xe-iuc" firstAttribute="top" secondItem="hIi-Ye-sKk" secondAttribute="top" id="beJ-bc-A1A"/>
+                                                <constraint firstAttribute="trailing" secondItem="aUU-Xe-iuc" secondAttribute="trailing" id="clh-YJ-cAz"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Ft-pN-t5s" secondAttribute="trailing" id="lUL-We-alK"/>
+                                                <constraint firstItem="1Ft-pN-t5s" firstAttribute="top" secondItem="hIi-Ye-sKk" secondAttribute="top" id="oKZ-nY-eUF"/>
+                                                <constraint firstItem="1Ft-pN-t5s" firstAttribute="leading" secondItem="hIi-Ye-sKk" secondAttribute="leading" id="rbd-8j-PiG"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="128"/>
+                                        <connections>
+                                            <outlet property="btnCheckBox" destination="aUU-Xe-iuc" id="1SH-pd-ecV"/>
+                                            <outlet property="citiesImageView" destination="1Ft-pN-t5s" id="Vdi-lp-ScK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="imG-2s-k5T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7TJ-Kn-OeK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="imG-2s-k5T" secondAttribute="trailing" constant="20" id="B72-aB-Alb"/>
+                            <constraint firstItem="oDU-Od-rLz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JtC-is-P5j"/>
+                            <constraint firstItem="oDU-Od-rLz" firstAttribute="top" secondItem="imG-2s-k5T" secondAttribute="bottom" constant="20" id="bPL-Qn-Shm"/>
+                            <constraint firstItem="oDU-Od-rLz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d5H-pn-BRT"/>
+                            <constraint firstItem="oDU-Od-rLz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qvS-AR-nrN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnDelete" destination="imG-2s-k5T" id="e6i-8u-S5n"/>
+                        <outlet property="myCollectionView" destination="oDU-Od-rLz" id="JDI-FJ-7pp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="66.964285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
